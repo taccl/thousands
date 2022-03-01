@@ -1,18 +1,20 @@
 {
-  "name": "thousands",
-  "version": "1.0.1",
+  "name": "@taccl/thousands",
+  "version": "0.0.0",
   "description": "A micro javascript library for formatting numbers with thousands separator",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "ava",
-    "lint": "eslint ."
+    "build:tsc:clear": "tsc --build --clean",
+    "build:tsc:clean": "yarn build:tsc:clear && yarn build:tsc:noargs",
+    "build:tsc:noargs": "tsc",
+    "test": "ava-ts test"
   },
   "files": [
     "index.js"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/scurker/thousands.git"
+    "url": "git://github.com/taccl/thousands.git"
   },
   "author": "Jason Wilson <jason@scurker.com>",
   "license": "MIT",
@@ -28,7 +30,21 @@
     "separator"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
     "ava": "^0.17.0",
-    "eslint": "^3.13.1"
+    "ava-ts": "^0.25.2",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0"
+  },
+  "dependencies": {
+    "@taccl/package": "github:taccl/package",
+    "@types/node": "^17.0.21",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.6.2",
+    "yarn": "^1.22.17"
   }
 }
